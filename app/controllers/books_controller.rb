@@ -4,18 +4,18 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = Book.all
+    
+    # 変更前
+    # render json: @books, only: [:id, :title, :author]
 
-    # render json: @books
-
-    # :only オプションを使って、表示するカラムを指定する
-    render json: @books, only: [:id, :title, :author]
+    # 変更後：Blueprintに「JSONを作って！」と依頼する
+    render json: BookBlueprint.render(@books)
   end
 
   # GET /books/1
   def show
-    # ここも同じように only オプションをつけてみる
-    # 練習：showでは「タイトル」しか見せないようにしてみましょう
-    render json: @book, only: [:title]
+    # showの方も同じように使えます
+    render json: BookBlueprint.render(@book)
   end
 
   # POST /books
