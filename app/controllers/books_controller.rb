@@ -5,12 +5,17 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
 
-    render json: @books
+    # render json: @books
+
+    # :only オプションを使って、表示するカラムを指定する
+    render json: @books, only: [:id, :title, :author]
   end
 
   # GET /books/1
   def show
-    render json: @book
+    # ここも同じように only オプションをつけてみる
+    # 練習：showでは「タイトル」しか見せないようにしてみましょう
+    render json: @book, only: [:title]
   end
 
   # POST /books
