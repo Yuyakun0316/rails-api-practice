@@ -13,3 +13,5 @@ RailsのAPIモード（`--api`）学習用アプリケーション。
   - 書籍データのJSON出力
   - `render json: ...` による基本的なレスポンス
   - `Blueprinter` を使用したレスポンス構造の整形（シリアライズ）
+- **関連データの出力**
+  - `association` を使用し、Bookリソースに紐づくReviewデータをネストしてJSON出力
