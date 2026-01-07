@@ -7,6 +7,8 @@ RailsのAPIモード（`--api`）学習用アプリケーション。
 - Ruby on Rails 8 (API mode)
 - MySQL
 - Blueprinter (JSONシリアライザ)
+- RSpec (rspec-rails)
+- FactoryBot
 
 ## ✨ 実装した機能
 - **BookリソースのAPI**
@@ -15,3 +17,6 @@ RailsのAPIモード（`--api`）学習用アプリケーション。
   - `Blueprinter` を使用したレスポンス構造の整形（シリアライズ）
 - **関連データの出力**
   - `association` を使用し、Bookリソースに紐づくReviewデータをネストしてJSON出力
+- **APIテスト (Request Spec)**
+  - RSpecを使用したエンドポイントの自動テスト
+  - レスポンスステータスとJSON構造の検証
